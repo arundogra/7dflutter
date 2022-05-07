@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
+import 'pages/Home_page.dart';
+import "pages/Login_page.dart";
 
 void main() {
   runApp(myApp());
 }
 
 class myApp extends StatelessWidget {
-  const myApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Material(
-        child: Center(
-          child: Container(
-            child: Text("Day1"),
-          ),
-        ),
-      ),
+      themeMode: ThemeMode.light,
+      theme: ThemeData(primarySwatch: Colors.cyan),
+      debugShowCheckedModeBanner: false,
+      // home: homePage()/**/
+      initialRoute: "/home",
+        routes: {
+        "/home": (context) => HomePage(),
+        "/login": (context) => LoginPage(),
+        },
     );
   }
 }
